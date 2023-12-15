@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Smart Home System</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="About Us" />
+	<meta name="author" content="WebsiteWizard&trade;" />
+	<meta name="keywords" content="html, css, car, corporation, about, history, team" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<main>
+		<!--Navigator-->
+	<nav class="navbar">
+			<div class="navbar-container container">
+				<input type="checkbox" name="" id="">
+				<div class="hamburger-lines">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+				</div>
+				<ul class="menu-items">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">Support</a></li>
+					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
+					<li><a href="{{ url_for('enhancements') }}">About</a></li>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+				</ul>
+				<h1 class="logo">SMART<span class="logo-highlight">HOME</span></h1>
+			</div>
+		</nav>
+
+		<section class="hero-section small">
+			<div class="hero-container">
+			  <h1 class="headline" id="home">ABOUT US</h1>
+			  <p>Contact us for assistance or enquiry</p>
+			</div>
+		</section>
+
+		<section id="team">
+    		<div class="team-container container">
+				<!--mysha's Profile-->
+				<div class="team-member">
+					<figure class="team-figure">
+						<img class="team-image" src="{{ url_for('static', filename='mysha.jpeg') }}" alt="">
+						<figcaption>Lead Developer</figcaption>
+					</figure>
+					<dl>
+						<dt>Name</dt>
+						<dd>Mysha Nahiyan Shemontee</dd>
+						<dt>Student ID</dt>
+						<dd>102773618</dd>
+						<dt>Course</dt>
+						<dd>Bachelor of Computer Science</dd>
+						<dt>E-mail</dt>
+						<dd>102773618@students.swinburne.edu.my</dd>
+					</dl>
+					<a class="btn btn-primary" href="mailto:102773618@students.swinburne.edu.my">Contact</a>
+				</div>
+				<!--lapxuan's Profile-->
+				<div class="team-member">
+					<figure class="team-figure">
+						<img class="team-image" src="{{ url_for('static', filename='lapxuan.jpeg') }}" alt="">
+						<figcaption>Developer 1</figcaption>
+					</figure>
+					<dl>
+						<dt>Name</dt>
+						<dd>Thong Lap Xuan</dd>
+						<dt>Student ID</dt>
+						<dd>10xxxxxxx</dd>
+						<dt>Course</dt>
+						<dd>Bachelor of Computer Science</dd>
+						<dt>E-mail</dt>
+						<dd>102773618@students.swinburne.edu.my</dd>
+					</dl>
+					<a class="btn btn-primary" href="mailto:102773618@students.swinburne.edu.my">Contact</a>
+				</div>
+			</div>
+			<div class="team-container container">
+				<!--joseph's Profile-->
+				<div class="team-member">
+					<figure class="team-figure">
+						<img class="team-image" src="{{ url_for('static', filename='joseph.jpeg') }}" alt="">
+						<figcaption>Developer 2</figcaption>
+					</figure>
+					<dl>
+						<dt>Name</dt>
+						<dd>Joseph </dd>
+						<dt>Student ID</dt>
+						<dd>10xxxxxxx</dd>
+						<dt>Course</dt>
+						<dd>Bachelor of Computer Science</dd>
+						<dt>E-mail</dt>
+						<dd>102773618@students.swinburne.edu.my</dd>
+					</dl>
+					<a class="btn btn-primary" href="mailto:102773618@students.swinburne.edu.my">Contact</a>
+				</div>
+				<!--Jerrome's Profile-->
+				<div class="team-member">
+					<figure class="team-figure">
+						<img class="team-image" src="{{ url_for('static', filename='nihao.jpeg') }}" alt="">
+						<figcaption>Developer 3</figcaption>
+					</figure>
+					<dl>
+						<dt>Name</dt>
+						<dd>Ni hao</dd>
+						<dt>Student ID</dt>
+						<dd>10xxxxxxxx</dd>
+						<dt>Course</dt>
+						<dd>Bachelor of Computer Science</dd>
+						<dt>E-mail</dt>
+						<dd>102773618@students.swinburne.edu.my</dd>
+					</dl>
+					<a class="btn btn-primary" href="mailto:102773618@students.swinburne.edu.my">Contact</a>
+				</div>
+			</div>
+    	</section>
+
+		
+	</main>
+	
+	<!-- Footer (Same For Each Page) -->
+	<div class="footer-basic">
+		<footer>
+			<p class="footerfade">SWE30011 | <a href="about.html">Contact Us</a></p>
+			<p class="copyright">&#169; 2023 breadBoardWarriors&trade;</p>
+		</footer>
+	</div>
+</body>
+</html>

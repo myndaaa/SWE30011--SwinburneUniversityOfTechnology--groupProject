@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Smart Home System</title>
+	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="Foo Motor Corporation | Home Page" />
+	<meta name="keywords" content="html, css, car, corporation, home, index" />
+	<meta name="author" content="WebsiteWizard&trade;" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head
+<body>
+	<main>
+		<!--Navigator-->
+		<nav class="navbar">
+			<div class="navbar-container container">
+				<input type="checkbox" name="" id="">
+				<div class="hamburger-lines">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+				</div>
+				<ul class="menu-items">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">Support</a></li>
+					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
+					<li><a href="{{ url_for('enhancements') }}">About</a></li>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+				</ul>
+				<h1 class="logo">SMART<span class="logo-highlight">HOME</span></h1>
+			</div>
+		</nav>
+
+    	<!--Front "header" banner with a call to action-->
+		<section class="hero-section main">
+			<div class="hero-container">
+			  <h1 class="headline">Moving Your Future</h1>
+			  <p>Empower Your Living: Where Innovation Meets Home.</p>
+			  <a href="{{ url_for('enhancements') }}" class="btn btn-primary">Your System</a>
+			</div>
+		</section>
+
+		<!--General article-style section-->
+		<section id="frontpage-info">
+			<div class="info-wrapper container">
+				<div class="frontpage-text">
+					<h2>The Future of living</h2>
+					<p>
+						We have brought to you the power to control and monitor
+						your home at the power of your fingertips<br><br>
+						our team <b>breadBoardWarriors</b> worked hard to ensure
+						the system has robust engineering, a secured database 
+						and not to mention the best of technology at your home.
+					</p>
+					<a href="{{ url_for('about') }}" class="btn btn-primary">Find more about the team</a>
+				</div>
+				<div class="frontpage-info-img">
+					<img src="{{ url_for('static', filename='system.jpg') }}" class="image" alt="">
+					<!-- Taken by Mike B | Used under CC0 license-->
+				</div>
+			</div>
+		  </section>
+
+		<section id="video">
+			<div class="video-container container">
+				<h2>Smart Home system</h2>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/TOXbKIziWTI" 
+				title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+				clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!-- RICKROLL -->
+			</div>
+		</section>
+    	
+		
+  	</main>
+	<!-- Footer (Same For Each Page) -->
+	<div class="footer-basic">
+		<footer>
+			<p class="footerfade">SWE30011 | <a href="about.html">Contact Us</a></p>
+			<p class="copyright">&#169; 2023 breadBoardWarriors&trade;</p>
+		</footer>
+	</div>
+</body>
+</html>

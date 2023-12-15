@@ -1,0 +1,808 @@
+
+/* --  GLOBAL -- */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* API call for importing a Google font with specific weights for style. Adapted from Alvaro Trigo's work: https://github.com/alvarotrigo */
+
+* {
+	font-family: "Montserrat";
+	color: #4f3d2f;
+}
+
+*,
+*::before,
+*::after { /* Industry practice. Turns the CSS into a "blank sheet" with no default padding/border. */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* --  GENERAL CLASSES -- */
+
+.container { /* Default div styling */
+	max-width: 1200px;
+	width: 90%;
+	margin: auto;
+}
+  
+.btn { /* Call to action button */
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	text-decoration: none;
+	border-radius: 50px;
+	cursor: pointer;
+	outline: none;
+	margin-top: 1em;
+	text-transform: uppercase;
+	font-weight: small;
+}
+  
+.btn-primary { /* Secondary class styling */
+	color: #ccc;	
+	background: #1646a0;
+}
+  
+.btn-primary:hover { /* Smooth color change on hover*/
+	background: #10306b;	
+	transition: background 0.3s ease-in-out;
+}
+
+/* -- NAV BAR -- */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines { /* Don't display hamburger menu */
+  display: none;
+}
+
+.navbar { 
+	box-shadow: 0px 5px 10px 0px #999;
+	position: fixed;
+	width: 100%;
+	background: #ccc;
+	color: #000;
+	opacity: 0.85;
+	height: 50px;
+	z-index: 12;
+}
+
+.navbar-container { /* Spacing for links in the nav bar */
+	display: flex;
+	justify-content: space-between;
+	height: 64px;
+	align-items: center;
+}
+
+.menu-items {
+	order: 2;
+	display: flex;
+}
+
+.menu-items li {
+	list-style: none;
+	margin-left: 1.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.menu-items a { 
+	text-decoration: none;
+	color: #444;
+	font-weight: 500;
+	transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover { /* Smooth color change on hover */
+	color: #1646a0;
+	transition: color 0.3s ease-in-out;
+}
+
+.logo { /* Text logo on left side */
+	order: 1;
+	font-size: 2.3rem;
+	margin-bottom: 0.7rem;
+}
+
+.logo-highlight {
+	color: #1646a0;
+}
+
+/* -- HERO SECTION -- */
+
+.hero-section { 
+	background: linear-gradient(
+		#f0f0f025,
+		#ffffff56
+	  ),
+	url("https://static.vecteezy.com/system/resources/previews/024/352/427/non_2x/modern-smart-home-management-systems-use-augmented-reality-smart-building-the-smart-home-isolated-background-generate-ai-free-photo.jpg");
+	  
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.hero-section.main {
+	height: 55vh;
+}
+
+.hero-section.small {
+	height:30vh;
+}
+  
+.hero-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 1.6rem;
+}
+  
+.headline {
+	text-transform: uppercase;
+	margin-top: 1.5em;
+}
+
+/* -- INFO SECTION -- */
+
+#video {
+	padding: 50px 0;
+	text-align: center;
+}
+
+#frontpage-info {
+	padding: 50px 0; /* Gives the section 'body' */
+	background: #f5f5f7;
+}
+  
+.info-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+  
+#frontpage-info h2, #video h2 {
+	font-size: 2.3rem;
+}
+  
+#frontpage-info p {
+	font-size: 1.2rem;
+	color: #555;
+}
+
+  
+.frontpage-info-img {
+	flex: 1 1 400px;
+	padding: 30px; 
+	transform: translateX(150%); /* Positions image off to the right */
+	animation: frontpage-info-animation 1s ease-in-out forwards;
+}
+
+/* 	Animation concept adapted from Keith Daulton's work:
+	https://github.com/d13 */
+  
+@keyframes frontpage-info-animation { /* Slides the image into the center */
+	100% {
+		transform: translate(0);
+	}
+}
+  
+.frontpage-text {
+	flex: 1 1 400px;
+	padding: 30px;
+	margin: auto;
+	transform: translate(-150%); /* Positions text off to the left */
+	animation: frontpage-text-animation 1s ease-in-out forwards;
+}
+  
+@keyframes frontpage-text-animation { /* Slides the text into the center */
+	100% {
+		transform: translate(0);
+	}
+}
+  
+.frontpage-info-img img {
+	display: block;
+	height: 400px;
+	max-width: 100%;
+	margin: auto;
+	object-fit: cover;
+	object-position: right;
+}
+
+/* -- ABOUT PAGE -- */
+
+.team-member dl {
+    padding: 0.5em;
+	font-size: 90%;
+	margin-top: 15px;
+}
+
+.team-member dt {
+	float: left;
+	clear: left;
+	width: 100px;
+	text-align: right;
+	font-weight: bold;
+	color: #1646a0;
+}
+
+.team-member dt::after {
+	content: ":";
+}
+
+.team-member dd {
+	margin: 0 0 0 110px;
+	padding: 0 0 0.5em 0;
+}
+
+.team-member {
+	float: left;
+	width: 48%;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin: 15px 10px;
+}
+  
+.team-figure {
+	float: right; /* as per requirements */
+	padding-top: 15px;
+	padding-right: 10px;
+}
+  
+.team-image {
+	display: block;
+	width: 85px;
+	height: 85px;
+	margin: auto;
+	border: double; /* as per requirements */
+	border-radius: 50%;
+}
+
+.team-figure figcaption {
+	margin-top: 5px;
+	text-align: center;
+	font-weight: 900;
+}
+
+#table-section {
+	padding: 50px;
+	background: #f5f5f7;
+	clear: both;
+	text-align: center;
+}
+
+.table-container { /* Allows the table to scroll responsively */
+	margin-top: 20px;
+	text-align: center;
+	overflow: hidden;
+	overflow-x: auto;
+	clear: both;
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	margin:auto;
+	width:80%;
+	padding: 20px;
+}
+
+table td {
+	padding: 15px;
+}
+
+table thead th {
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 2px solid #54585d;
+}
+
+table tbody td {
+	color: #636363;
+	border: 1px solid #dddfe1;
+	width:18%
+}
+
+table tbody th {
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 2px solid #54585d;
+}
+
+table tbody tr {
+	background-color: #f9fafb;
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.inq {
+	background-color: #ffa07a;
+}
+
+.oop {
+	background-color: #90ee90;
+}
+
+.cloud {
+	background-color: #87cefa;
+}
+
+/* -- Product Page -- */
+
+h1:not(.logo) { 
+	font-family: "Comfortaa";
+	font-size: 2em;
+}
+
+aside ol {
+	font-weight: 900;
+	list-style-type: decimal-leading-zero;
+	padding: 10px 0 10px 32px;
+}
+
+aside.sidebar{ /* Sidebar */
+	float:right;
+	width:25%;
+	margin: 30px 0;
+	padding: 1em;
+	border-top: 10px inset #444;
+    background-color: rgb(131, 146, 196);
+}
+
+aside table {
+	margin: 10px 0;
+}
+  
+aside.sidebar .quote input, aside.sidebar .quote textarea{
+	width:90%;
+	padding:5px;
+}
+
+article.main-col { /* Main column */
+	float:left;
+	width:70%;
+	padding:20px;
+}
+
+.main-col p {
+	margin: 20px 0;
+}
+
+.main-col .attrib {
+	text-align: center;
+}
+
+article img {
+	display:block;
+	margin:auto;
+	width:50%;
+}
+
+
+
+#package { /* Adapted from the work of Aris Kuckovic: @AKuckovic*/
+	clear:both;
+}
+	
+#pricing-tables {
+	width: 80%;
+	padding-top: 30px;
+	font-family: "Abel", sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin:auto;
+}
+	  
+.pricing-table {
+	max-width: 300px;
+	width: 100%;
+	margin: 15px 0;
+}
+		
+.header .title {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 15px 0;
+	background: #e4e4e4;
+	color: #000;
+	font-size: 16x;
+}
+  
+.header .price {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 15px 0;
+	background: #f6f6f6;
+	color: #000;
+	font-size: 28px;
+	font-weight: 300;
+}
+	  
+.price span {
+	font-size: 14px;
+	vertical-align: super;
+}
+
+
+.features {
+	background: #fdfdfd;
+}
+
+.features ul {
+	list-style: none;
+	margin: 0;
+	padding: 15px 0;
+}
+
+.features li {
+	  padding: 8px 5px;
+	  text-align: center;
+}
+	  
+.features li span {
+	color: #999;
+}
+
+.signup {
+  background: #fdfdfd;
+  padding: 2px 0 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+  
+.signup a {
+	width: auto;
+	margin: 0 auto;
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #1646a0;
+	border: 1px solid #1646a0;
+	transition: all .2s ease;
+}
+	
+.signup a:hover {
+	color: #fff;
+	background: #1646a0;
+}
+
+.pricing-table.featured  .header .title{
+	background: #1646a0;
+	color: #fff;
+}
+  
+.pricing-table.featured .signup a {
+	background: #1646a0;
+	color: #fff;
+}
+
+.pricing-table.featured .signup a:hover {
+	color: #1646a0;
+	background: #fff;
+}
+
+
+
+.form-container {
+	padding: 50px 0; /* Gives the section 'body' */
+	background: #f5f5f7;
+}
+
+.form-container .btn {
+	margin:auto;
+}
+
+fieldset {
+	padding: 10px;
+	margin: 10px;
+}
+
+legend {
+	font-weight: 900;
+}
+
+form p {
+	margin: 10px 0;
+}
+
+label:not(.nocolon)::after { /* Selects all labels that aren't classified as radio*/
+	content: ":";
+}
+
+input[type=text], input[type=password], input[type=email], input[type=tel] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #ffffff;
+}
+  
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+textarea {
+	width:100%;
+	resize: vertical;
+	padding:15px;
+	border-radius:15px;
+	border:0;
+	margin: 5px 0;
+	box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+	height:150px;
+}
+
+
+/* -- Media Query Breakpoints -- */
+
+@media (max-width: 1200px) {
+	.team-figure {
+		float: none;
+	}
+	dl {
+		float: none;
+	}
+	.team-image {
+		width: 150px;
+		height: 150px;
+	}
+	aside.sidebar{ /* Sidebar */
+		clear:both;
+		float:none;
+		width:50%;
+		min-width:300px;
+		margin:30px auto;
+	}
+	article.main-col { /* Main column */
+		float:left;
+		width:95%;
+		padding:20px;
+	}
+}
+
+@media screen and (min-width: 1024px) { /* Flexbox settings above tablet screen size */
+	#package #pricing-tables {
+		flex-direction: row;
+	}
+	.pricing-table {
+		margin:0;
+	}
+}
+
+@media (max-width: 1024px) { /* Tablet and under screen size */
+	.navbar {
+	  	opacity: 0.95;
+	}
+
+	.logo { /* Shifts the text logo over to the right side */
+		position: absolute;
+		top: 5px;
+		right: 15px;
+		font-size: 2rem;
+	}
+
+	.team-member {
+		width: 100%;
+		display: block;
+	}
+
+	.team-member .btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+	}
+
+	#package {
+		margin: 0 auto;
+	}
+
+	/* 	Hamburger menu adapted from Alvaro Trigo's work: 
+		https://github.com/alvarotrigo */
+
+	.navbar-container input[type="checkbox"],
+	.navbar-container .hamburger-lines { /* Makes the hamburger menu items visible */
+	  	display: block;
+	}
+  
+	.navbar-container {
+		display: block;
+		position: relative;
+		height: 64px;
+	}
+  
+	.navbar-container input[type="checkbox"] { /* Hidden interactable component */
+		position: absolute;
+		display: block;
+		height: 32px;
+		width: 28.5px;
+		top: 15px;
+		z-index: 5;
+		opacity: 0;
+	}
+  
+	.navbar-container .hamburger-lines { /* Spaces the hamburger elements */
+		display: block;
+		height: 23px;
+		width: 29px;
+		position: absolute;
+		top: 15px;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+  
+	.navbar-container .hamburger-lines .line { /* Styles the hamburger elements */
+		display: block;
+		height: 4px;
+		width: 100%;
+		border-radius: 10px;
+		background: #333;
+	}
+  
+	.navbar-container .hamburger-lines .line1 { /* Sets up and calls animations */
+		transform-origin: 0% 0%;
+		transition: transform 0.4s ease-in-out;
+	}
+  
+	.navbar-container .hamburger-lines .line2 {
+		transition: transform 0.2s ease-in-out;
+	}
+  
+	.navbar-container .hamburger-lines .line3 {
+		transform-origin: 0% 100%;
+		transition: transform 0.4s ease-in-out;
+	}
+  
+	.navbar .menu-items { /* Actual menu that slides out */
+		padding-top: 100px;
+		background: #fff;
+		height: 100vh;
+		max-width: 300px;
+		transform: translate(-150%); /* Initial position */
+		display: flex;
+		flex-direction: column;
+		margin-left: -50px;
+		padding-left: 50px;
+		transition: transform 0.5s ease-in-out;
+		box-shadow: 5px 0px 10px 0px #aaa;
+	}
+  
+	.navbar .menu-items li {
+		margin-bottom: 1.5rem;
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+
+	.navbar-container input[type="checkbox"]:checked ~ .menu-items { /* Defines animations */
+		transform: translateX(0);
+	}
+  
+	.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+		transform: rotate(45deg);
+	}
+  
+	.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+		transform: scaleY(0);
+	}
+  
+	.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+		transform: rotate(-45deg);
+	}
+}
+
+@media (max-width: 500px) { /* Phone and under screen size */
+	html {
+		font-size: 65%;
+	}
+
+	.team-image {
+		width: 100px;
+		height: 100px;
+	}
+
+	.logo-highlight{ /* Shortens the text logo*/
+		display: none;
+	}
+  
+	.navbar .menu-items li{
+		font-size: 1.6rem;
+	}
+
+	section .btn { /* Big button for mobile users */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+	}
+
+	#frontpage-info { /* Thins down the section */
+		padding: 30px 0;
+	}
+
+	.frontpage-info-img img {
+		height: 200px;
+	}
+  
+	.logo {
+		position: absolute;
+		top: 06px;
+		right: 15px;
+		font-size: 3rem;
+	}
+  
+	.navbar .menu-items li {
+		margin-bottom: 2.5rem;
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	aside.sidebar{ /* Sidebar */
+		width:95%;
+	}
+	
+  }
+  
+  @media (min-width: 769px) and (max-width: 1200px) {
+	.img-container h3 {
+	  font-size: 1.5rem;
+	}
+  
+	.img-container .btn {
+	  font-size: 0.7rem;
+	}
+  }
+
+
+/* -- Full Page Width Footer -- */
+
+.footer-basic {
+	padding:40px 0;
+	background-color:#4b4c4d;
+	color:#fff;
+	clear:both;
+}
+  
+.footer-basic .footerfade {
+	color: #fff;
+	padding:0;
+	list-style:none;
+	text-align:center;
+	font-size:18px;
+	line-height:1.6;
+	margin-bottom:0;
+}
+  
+.footer-basic .footerfade a {
+	color:inherit;
+	text-decoration:none;
+	opacity:0.8;
+}
+  
+.footer-basic .footerfade a:hover {
+	opacity:1;
+}
+
+.footer-basic .copyright {
+	font-style: italic;
+	margin-top:15px;
+	text-align:center;
+	font-size:13px;
+	color:#aaa;
+	margin-bottom:0;
+}
+

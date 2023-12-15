@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Home System</title>
+	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="Foo Motor Corporation Product Details Page" />
+	<meta name="keywords" content="html, css, car, sales" />
+	<meta name="author" content="WebsiteWizard&trade;" />
+	 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main>
+		<!--Navigator-->
+		<nav class="navbar">
+			<div class="navbar-container container">
+				<input type="checkbox" name="" id="">
+				<div class="hamburger-lines">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+				</div>
+				<ul class="menu-items">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">Support</a></li>
+					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
+					<li><a href="{{ url_for('enhancements') }}">About</a></li>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+				</ul>
+				<h1 class="logo">SMART<span class="logo-highlight">HOME</span></h1>
+			</div>
+		</nav>
+
+    <section class="hero-section small">
+			<div class="hero-container">
+			  <h1 class="headline" id="home">Control your system</h1>
+			  <p>use the buttons</p>
+			</div>
+		</section>
+
+    <section id="enigma">
+<form method="post" action="{{ url_for('cars') }}">
+      <div class="container">
+        <article class="main-col">
+		 <p> please note that you have to wait until your system comes back online to utilize remote control</p>
+			<form method="post" action="{{ url_for('cars') }}">
+			<h2 class="article-title">Motor On</h2>
+			<p>
+			<style>
+				.switch {
+				  position: relative;
+				  display: inline-block;
+				  width: 60px;
+				  height: 34px;
+				}
+
+				.switch input { 
+				  opacity: 0;
+				  width: 0;
+				  height: 0;
+				}
+
+				.slider {
+				  position: absolute;
+				  cursor: pointer;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: #ccc;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+				.slider:before {
+				  position: absolute;
+				  content: "";
+				  height: 26px;
+				  width: 26px;
+				  left: 4px;
+				  bottom: 4px;
+				  background-color: white;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+				input:checked + .slider {
+				  background-color: #2196F3;
+				}
+
+				input:focus + .slider {
+				  box-shadow: 0 0 1px #2196F3;
+				}
+
+				input:checked + .slider:before {
+				  -webkit-transform: translateX(26px);
+				  -ms-transform: translateX(26px);
+				  transform: translateX(26px);
+				}
+
+				/* Rounded sliders */
+				.slider.round {
+				  border-radius: 34px;
+				}
+
+				.slider.round:before {
+				  border-radius: 50%;
+				}
+			</style>
+			<label class="switch">
+				<input type="checkbox" id="motorToggle">
+				<span class="slider round"></span>
+				</label>
+
+	</p>
+	
+          <h2 class="article-title">Blind [Front]</h2>
+          <p>
+		 
+            <div class="slidecontainer">
+			  
+			  <input type="range" min="1" id="frontBlindSlider" max="3" value="2" disabled >
+			 
+			</div>
+          </p>
+		
+		 
+          
+          <h2 class="article-title">Blind [Back]</h1>
+            <p>
+             <div class="slidecontainer">
+				  
+				  <input type="range" min="1" id="backBlindSlider" max="3" value="2" disabled>
+				 
+				</div>
+            </p>
+			
+
+			<h2 class="article-title">Buzzer off</h1>
+             <p>
+				<button type="submit" name="buzzerButton" class="button button1">turn off</button>
+			</p>
+			<style>
+			.button {
+				  background-color: #1b1d21; 
+				  border: none;
+				  color: white;
+				  padding: 15px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  margin: 4px 2px;
+				  cursor: pointer;
+				  -webkit-transition-duration: 0.4s; /* Safari */
+				  transition-duration: 0.4s;
+				}
+			.button1 {
+				  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+				}
+			</style>
+             
+            </p>
+			
+			<h2 class="article-title">Patrol State</h2>
+			<p>
+			<style>
+				.switch {
+				  position: relative;
+				  display: inline-block;
+				  width: 60px;
+				  height: 34px;
+				}
+
+				.switch input { 
+				  opacity: 0;
+				  width: 0;
+				  height: 0;
+				}
+
+				.slider {
+				  position: absolute;
+				  cursor: pointer;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  bottom: 0;
+				  background-color: #ccc;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+				.slider:before {
+				  position: absolute;
+				  content: "";
+				  height: 26px;
+				  width: 26px;
+				  left: 4px;
+				  bottom: 4px;
+				  background-color: white;
+				  -webkit-transition: .4s;
+				  transition: .4s;
+				}
+
+				input:checked + .slider {
+				  background-color: #2196F3;
+				}
+
+				input:focus + .slider {
+				  box-shadow: 0 0 1px #2196F3;
+				}
+
+				input:checked + .slider:before {
+				  -webkit-transform: translateX(26px);
+				  -ms-transform: translateX(26px);
+				  transform: translateX(26px);
+				}
+
+				/* Rounded sliders */
+				.slider.round {
+				  border-radius: 34px;
+				}
+
+				.slider.round:before {
+				  border-radius: 50%;
+				}
+			</style>
+			<label class="switch">
+				<input type="checkbox" id="motorToggle" disabled>
+				<span class="slider round"></span>
+				</label>
+
+	</p>
+	
+	</form>
+	
+          <img src="{{ url_for('static', filename='product.jpeg') }}" class="image" alt="">
+          
+        </article>
+
+        <aside class="sidebar">
+          <div class="dark">
+            <h3>Our Philosophy</h3>
+            <p>We believe everyone has the right to enjoy technology, tech should not be
+			gatekept. Hence we have three tiers of service. You're currently using the free tier. Below are our pricings</p>
+            <ol> <!-- Ordered list for requirement -->
+              <li>Free Tier: 0 RM/month</li>
+              <li>Fun Tier: 10 RM/month</li>
+              <li>Premium: 25 RM/month</li>
+              
+            </ol>
+            <p>Just controlling your blinds and water motor is not enough for you? head over to the next section and choose 
+			the suitable paid version of our service
+            </p>
+          </div>
+        </aside> </br></br>
+      </div>
+    </section>
+
+    <section id="package" class="container"> <!-- Optional feature packages -->
+      <div id="pricing-tables">
+        <div class="pricing-table">
+          <div class="header">
+            <div class="title">Free</div>
+            <div class="price">0.00<span>ringgits</span></div>
+          </div>
+          <div class="features">
+            <ul> <!-- Unordered lists for requirement -->
+              <li>Blinds back <span>Manual</span></li>
+              <li>Blinds front <span>Manual</span></li>
+              <li>Water motor <span>Manual</span></li>
+              <li>Buzzer <span>Turn off-able</span></li>
+            </ul>
+          </div>
+          <div class="signup">
+            <a href="mailto:102773618@students.swinburne.edu.my">Enquire</a>
+          </div>
+        </div>
+        
+        <div class="pricing-table featured">
+          <div class="header">
+            <div class="title">Fun</div>
+            <div class="price">10.00<span>ringgits</span></div>
+          </div>
+          <div class="features">
+            <ul>
+              <li>all free tier<span> Plus+</span></li>
+              <li>Lighitng <span> Manual</span></li>
+              <li>Drone <span>Manual</span></li>
+              <li>water source<span>Manual</span></li>
+            </ul>
+          </div>
+          <div class="signup">
+            <a href="mailto:102773618@students.swinburne.edu.my">Enquire</a>
+          </div>
+        </div>
+        
+        <div class="pricing-table">
+          <div class="header">
+            <div class="title">Premium</div>
+            <div class="price">25.00<span>ringgits</span></div>
+          </div>
+          <div class="features">
+            <ul>
+              <li>All fun tier <span>Plus+</span></li>
+              <li>Door Alert <span>notifications</span></li>
+              <li>Solar panel<span> system</span></li>
+              <li> <span>Cruise Control</span></li>
+            </ul>
+          </div>
+          <div class="signup">
+            <a href="mailto:102773618@students.swinburne.edu.my">Enquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Footer (Same For Each Page) -->
+<div class="footer-basic">
+		<footer>
+			<p class="footerfade">SWE30011 | <a href="about.html">Contact Us</a></p>
+			<p class="copyright">&#169; 2023 breadBoardWarriors&trade;</p>
+		</footer>
+	</div>
+</html> 

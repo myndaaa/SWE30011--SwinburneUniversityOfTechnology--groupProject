@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Smart Home System</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="keywords" content="HTML, CSS, car, sales" />
+	<meta name="description" content="How the content, presentation and functionality of the website has enhanced." />
+	<meta name="author" content="WebsiteWizard&trade;" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<main>
+	<!--Navigator-->
+	<nav class="navbar">
+		<div class="navbar-container container">
+			<input type="checkbox" name="" id="">
+			<div class="hamburger-lines">
+				<span class="line line1"></span>
+				<span class="line line2"></span>
+				<span class="line line3"></span>
+			</div>
+			<ul class="menu-items">
+				<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">Support</a></li>
+					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
+					<li><a href="{{ url_for('enhancements') }}">About</a></li>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+			</ul>
+			<h1 class="logo">SMART<span class="logo-highlight">HOME</span></h1>
+		</div>
+	</nav>
+
+	<section class="hero-section small">
+        <div class="hero-container">
+          <h1 class="headline" id="home">Stats from your house!!</h1>
+          <p>we care what information is important to you!</p>
+        </div>
+    </section>
+
+	
+	<section id="enhancements">
+		<div class="container">
+		  <article class="main-col">
+			<h5 class="article-title">Raining graph for last 7 days</h5>
+			<p>
+			  <img src="data:image/png;base64,{{ rain_plot }}" class="image" alt="Raining Graph">
+			</p>
+			<h5 class="article-title">soil moisture graph for last 7 days</h5>
+			<p>
+			  <img src="data:image/png;base64,{{ moisture_plot }}" class="image" alt="Soil Moisture Graph">
+
+			</p>
+			
+		  </article>
+  
+		  <aside class="sidebar">
+			<div class="dark">
+			  <h3>Current stats at your home</h3>
+			  <p>
+				Garden raining: {{ latest_rain }}<br>
+				Inside temperature: {{ latest_inside_temp }}°C<br>
+				Soil moisture: {{ latest_soil_moisture }}%<br>
+				Outside temperature: {{ latest_outside_temp }}°C<br>
+				
+			  </p>
+		  </aside>
+		  
+			
+	  </section>
+	
+	<!-- Footer (Same For Each Page) -->
+	<div class="footer-basic">
+		<footer>
+			<p class="footerfade">SWE30011 | <a href="about.html">Contact Us</a></p>
+			<p class="copyright">&#169; 2023 breadBoardWarriors&trade;</p>
+		</footer>
+	</div>
+</body>
+</html>

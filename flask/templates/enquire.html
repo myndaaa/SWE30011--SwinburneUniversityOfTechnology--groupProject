@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+	<title>Smart Home System</title>
+	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="Foo Motor Corporation | Enquiry Page" />
+	<meta name="keywords" content="html, css, car, corporation, enquiry, service" />
+	<meta name="author" content="WebsiteWizard&trade;" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="{{ url_for('static', filename='webcam.js') }}"></script>
+</head>
+<body>
+	<!--Navigator-->
+	<nav class="navbar">
+		<div class="navbar-container container">
+			<input type="checkbox" name="" id="">
+			<div class="hamburger-lines">
+				<span class="line line1"></span>
+				<span class="line line2"></span>
+				<span class="line line3"></span>
+			</div>
+			<ul class="menu-items">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">Support</a></li>
+					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
+					<li><a href="{{ url_for('enhancements') }}">About</a></li>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+			</ul>
+			<h1 class="logo">SMART<span class="logo-highlight">HOME</span></h1>
+		</div>
+	</nav>
+
+    <section class="hero-section small">
+        <div class="hero-container">
+          <h1 class="headline" id="home">Surveillance</h1>
+          <p>Video Stream from your CCTV</p>
+        </div>
+    </section>
+	
+	<section class="form-container container">
+        <p>Video Stream from garden</p>
+        <div id="webcam-container">
+            
+            <canvas id="canvas" width="640" height="480"></canvas>
+<video id="webcam" autoplay playsinline width="640" height="480"></video>
+        </div>
+    </section>
+	<!-- Footer (Same For Each Page) -->
+    <div class="footer-basic">
+    	<footer>
+			<p class="footerfade">SWE30011 | <a href="about.html">Contact Us</a></p>
+			<p class="copyright">&#169; 2023 breadBoardWarriors&trade;</p>
+		</footer>
+    </div>
+</body>
+</html>
