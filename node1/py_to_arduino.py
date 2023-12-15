@@ -1,16 +1,28 @@
 import serial
-import MySQLdb
+import mysql.connector
 
 # Configure the serial port
-ser = serial.Serial('COM3', 9600)  # Arduino's serial port
+ser = serial.Serial('/dev/ttyS0', 9600)  # Arduino's serial port
 
-# Connect to the MySQL database
-db = MySQLdb.connect(host="localhost", user="root", password="", db="localdb")
-cursor = db.cursor()
+#  MariaDB connection 
+db_host = "localhost"
+db_user = "root"
+db_password = ""
+db_name = "localdb"
+
+ # Connect to MariaDB
+        db_connection = mysql.connector.connect(
+            host=db_host,
+            user=db_user,
+            password=db_password,
+            database=db_name
+        )
+
+cursor = db_connection.cursor()   
 
 # Function to read motor state from the database
 def get_motor_state():
-    cursor.execute("SELECT motorState FROM your_table_name ORDER BY id DESC LIMIT 1")
+    cursor.execute("SELECT value FROM motorState BY id DESC LIMIT 1")
     result = cursor.fetchone()
     if result:
         return result[0]
@@ -18,7 +30,7 @@ def get_motor_state():
 
 # Function to update motor state in the database
 def update_motor_state(state):
-    cursor.execute(f"INSERT INTO your_table_name (motorState) VALUES ({state})")
+    cursor.execute(f"INSERT INTO motorState (value) VALUES ({state})")
     db.commit()
 
 # Read and write loop
