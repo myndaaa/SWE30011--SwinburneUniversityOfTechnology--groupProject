@@ -2,6 +2,7 @@
 import time
 import json
 import mysql.connector
+from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 import paho.mqtt.publish as publish
 
 # Local DB connection
