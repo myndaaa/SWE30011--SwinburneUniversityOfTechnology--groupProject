@@ -3,7 +3,7 @@ import time
 import mysql.connector
 
 #Establish AWS MQTT Connection
-myMQTTClient=AWSIoTMQTTClient("breadBoardWarrior_broker")
+myMQTTClient=AWSIoTMQTTClient("breadBoardWarrior_node3")
 myMQTTClient.configureEndpoint("a3n3c0xu4k20cn-ats.iot.ap-southeast-1.amazonaws.com", 8883)
 myMQTTClient.configureCredentials("/home/pi/certs/AmazonRootCA1.pem","/home/pi/certs/77b7e291cd7be423744f6e36403a28e455006e40cb50b73d5baef224267592be-private.pem.key","/home/pi/certs/77b7e291cd7be423744f6e36403a28e455006e40cb50b73d5baef224267592be-certificate.pem.crt" )
 myMQTTClient.configureOfflinePublishQueueing(-1)
