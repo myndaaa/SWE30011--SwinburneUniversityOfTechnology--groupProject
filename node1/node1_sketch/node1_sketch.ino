@@ -44,10 +44,10 @@ void loop() {
   }
 
   // Control the relay based on conditions
-  if (motorState == 1 || (mappedMoisture < 40 && rainValue == HIGH)) {
+  if (motorState == 1 || (mappedMoisture < 40 )) {
     digitalWrite(relayPin, HIGH); // Turn on relay
   } else {
-    digitalWrite(relayPin, LOW); // Turn off relay
+    digitalWrite(relayPin, LOW && rainValue == HIGH); // Turn off relay
   }
   
   
