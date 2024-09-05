@@ -24,7 +24,8 @@
 				<ul class="menu-items">
 					<li><a href="{{ url_for('index') }}">Home</a></li>
 					<li><a href="{{ url_for('about') }}">Support</a></li>
-					<li><a href="{{ url_for('cars') }}">Control</a></li>
+					<li><a href="{{ url_for('control') }}">Control</a></li>
+
 					<li><a href="{{ url_for('enquire') }}">Surveillance</a></li>
 					<li><a href="{{ url_for('enhancements') }}">About</a></li>
 					<li><a href="{{ url_for('login') }}">Logout</a></li>
@@ -41,11 +42,12 @@
 		</section>
 
     <section id="enigma">
-<form method="post" action="{{ url_for('cars') }}">
+<form method="post" action="{{ url_for('control') }}">
       <div class="container">
         <article class="main-col">
 		 <p> please note that you have to wait until your system comes back online to utilize remote control</p>
-			<form method="post" action="{{ url_for('cars') }}">
+			<form method="post" action="{{ url_for('control') }}">
+
 			<h2 class="article-title">Motor On</h2>
 			<p>
 			<style>

@@ -75,9 +75,10 @@ def index():
 def about(): #nothing form db, only rendered from static
     return render_template('about.html')
 
-@app.route('/cars', methods=['POST']) # buttons and stuff
+@app.route('/control', methods=['GET', 'POST'])
 def control():
     if request.method == 'POST':
+        # Handle form submission
         motor_state = request.form.get('motorToggle')
         front_blind_state = request.form.get('frontBlindSlider')
         back_blind_state = request.form.get('backBlindSlider')
@@ -91,9 +92,10 @@ def control():
         cursor.execute("INSERT INTO buzzerState (state) VALUES (%s)", (buzzer_state,))
         cursor.execute("INSERT INTO patrolState (state) VALUES (%s)", (patrol_state,))
 
-        connection.commit()
+        db.commit()
 
     return render_template('product.html')
+
 
 @app.route('/enquire')
 def enquire():
